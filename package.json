@@ -1,0 +1,31 @@
+{
+  "name": "playwright-ts-framework-lite",
+  "version": "1.0.0",
+  "description": "Free/Lite edition: a clean Playwright + TypeScript test automation framework — Page Object Model, UI + API tests, reusable typed fixtures and utilities.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test src/tests/ui",
+    "test:api": "playwright test src/tests/api",
+    "test:headless": "cross-env PW_HEADLESS=true playwright test",
+    "test:headed": "cross-env PW_HEADLESS=false playwright test --headed",
+    "test:chromium": "cross-env PW_BROWSER=chromium playwright test --project=chromium",
+    "test:chrome": "cross-env PW_BROWSER=chrome PW_HEADLESS=false playwright test --project=chrome --headed",
+    "test:firefox": "cross-env PW_BROWSER=firefox playwright test --project=firefox",
+    "test:webkit": "cross-env PW_BROWSER=webkit playwright test --project=webkit",
+    "test:debug": "playwright test --debug",
+    "test:ui-mode": "playwright test --ui",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report",
+    "show-report": "playwright show-report",
+    "postinstall": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^22.7.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.6.2"
+  }
+}
